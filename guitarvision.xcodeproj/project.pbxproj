@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08A3571B351CEC488B998B7E /* Pods_guitarvision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9622AB76C132C5D6EE00B3B /* Pods_guitarvision.framework */; };
 		D40871EE2B21E5D00096CD55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40871ED2B21E5D00096CD55 /* AppDelegate.swift */; };
 		D40871F02B21E5D00096CD55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40871EF2B21E5D00096CD55 /* SceneDelegate.swift */; };
 		D40871F52B21E5D00096CD55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D40871F32B21E5D00096CD55 /* Main.storyboard */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2173624BBF82A910D2F7E535 /* Pods-guitarvision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guitarvision.release.xcconfig"; path = "Target Support Files/Pods-guitarvision/Pods-guitarvision.release.xcconfig"; sourceTree = "<group>"; };
+		C9622AB76C132C5D6EE00B3B /* Pods_guitarvision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_guitarvision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D40871EA2B21E5D00096CD55 /* guitarvision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = guitarvision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D40871ED2B21E5D00096CD55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D40871EF2B21E5D00096CD55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		D40871FB2B21E5D10096CD55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D40872062B21E8860096CD55 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		D4C736772B2898C700BD48EA /* guitarvisionML5.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = guitarvisionML5.mlmodel; sourceTree = "<group>"; };
+		EEA83EB9D0CBA0837F9D2FC9 /* Pods-guitarvision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guitarvision.debug.xcconfig"; path = "Target Support Files/Pods-guitarvision/Pods-guitarvision.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A3571B351CEC488B998B7E /* Pods_guitarvision.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A356571C684E4E92FB335F9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EEA83EB9D0CBA0837F9D2FC9 /* Pods-guitarvision.debug.xcconfig */,
+				2173624BBF82A910D2F7E535 /* Pods-guitarvision.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D40871E12B21E5D00096CD55 = {
 			isa = PBXGroup;
 			children = (
 				D40871EC2B21E5D00096CD55 /* guitarvision */,
 				D40871EB2B21E5D00096CD55 /* Products */,
+				A356571C684E4E92FB335F9B /* Pods */,
+				EC2C11A90D0A39075287A0A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +111,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		EC2C11A90D0A39075287A0A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9622AB76C132C5D6EE00B3B /* Pods_guitarvision.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,9 +126,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D40871FE2B21E5D10096CD55 /* Build configuration list for PBXNativeTarget "guitarvision" */;
 			buildPhases = (
+				F7A01E1BCDD06FF23882B8DE /* [CP] Check Pods Manifest.lock */,
 				D40871E62B21E5D00096CD55 /* Sources */,
 				D40871E72B21E5D00096CD55 /* Frameworks */,
 				D40871E82B21E5D00096CD55 /* Resources */,
+				83F30F18FF2A67063B4DA7F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,6 +186,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		83F30F18FF2A67063B4DA7F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-guitarvision/Pods-guitarvision-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-guitarvision/Pods-guitarvision-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-guitarvision/Pods-guitarvision-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7A01E1BCDD06FF23882B8DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-guitarvision-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D40871E62B21E5D00096CD55 /* Sources */ = {
@@ -315,6 +384,7 @@
 		};
 		D40871FF2B21E5D10096CD55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEA83EB9D0CBA0837F9D2FC9 /* Pods-guitarvision.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -343,6 +413,7 @@
 		};
 		D40872002B21E5D10096CD55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2173624BBF82A910D2F7E535 /* Pods-guitarvision.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
