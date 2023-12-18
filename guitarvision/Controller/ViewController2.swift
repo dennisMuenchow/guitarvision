@@ -13,6 +13,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    let wikipediaURL = "https://en.wikipedia.org/w/api.php"
     let imagePicker = UIImagePickerController()
     
     @IBOutlet weak var imageView: UIImageView!
@@ -47,9 +48,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         let request = VNCoreMLRequest(model: model) { (request, error) in
-            let classification = request.results?.first as? VNClassificationObservation
+            guard let classification = request.results?.first as? VNClassificationObservation else {
+                
+                fatalError("x")
+            }
             
-            self.navigationItem.title = classification?.identifier.capitalized
+            self.navigationItem.title = classification.identifier.capitalized
+            self.requestInfo(guitarName: classification.identifier)
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
@@ -62,7 +67,31 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
     }
+    
+    func requestInfo(guitarName: String) {
+        
+        let parameters : [String:String] = [
+            "format" : "json",
+            "action" : "query",
+            "prop" : "extracts",
+            "exintro" : "",
+            "explaintext" : "",
+            "titles" : guitarName,
+            "indexpageids" : "",
+            "redirects" : "1",
+        ]
+        
+        AF.request(wikipediaURL, method: .get, parameters: parameters).responseJSON { response in
+            if case .success(let value) = response.result {
+                print("Got the wikipedia Info")
+                print(value)
+            } else if case .failure(let error) = response.result {
+                print("Error: \(error)")
+            }
+        }
 
+    }
+    
     @IBAction func cameraTapped(_ sender: UIBarButtonItem) {
         
         present(imagePicker, animated: true, completion: nil)

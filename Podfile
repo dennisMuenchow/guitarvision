@@ -7,7 +7,7 @@ target 'guitarvision' do
 
   # Pods for guitarvision
 
-pod 'Alamofire', '~> 5.6.4'
+pod 'Alamofire', '~> 5.5'
 pod 'SwiftyJSON'
 
 end
