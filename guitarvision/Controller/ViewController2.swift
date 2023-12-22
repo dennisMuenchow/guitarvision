@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let imagePicker = UIImagePickerController()
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,10 +82,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             "redirects" : "1",
         ]
         
-        AF.request(wikipediaURL, method: .get, parameters: parameters).responseJSON { response in
+        Alamofire.request(wikipediaURL, method: .get, parameters: parameters).responseJSON { response in
             if case .success(let value) = response.result {
                 print("Got the wikipedia Info")
                 print(value)
+                
+                let guitarJSON : JSON =  JSON(response.result.value!)
+                
+                let pageID = guitarJSON["query"]["pageid"][0].stringValue
+                 
+                let guitarDescription = guitarJSON["query"]["pages"]["pageid"]["extract"].stringValue
+                
+                self.descriptionLabel.text = guitarDescription
+                print(self.descriptionLabel.text)
+                
             } else if case .failure(let error) = response.result {
                 print("Error: \(error)")
             }
